@@ -1,5 +1,5 @@
 
-interface Product{
+export interface Product{
     description:string;
     price:number;
 }
@@ -14,14 +14,14 @@ const tablet: Product = {
     price: 250.0
 }
 
-interface TaxtCalculationOptions{
+export interface TaxtCalculationOptions{
     tax: number;
     products:Product[];
 }
 
 //function taxCalculation(options: TaxtCalculationOptions): number[]{  //desustructurar argumentos
 //function taxCalculation({tax,products}: TaxtCalculationOptions):[number,number]{ //[number,number] devulve una tupla
-function taxCalculation(options: TaxtCalculationOptions):[number,number]{ //[number,number] devulve una tupla
+export function taxCalculation(options: TaxtCalculationOptions):[number,number]{ //[number,number] devulve una tupla
     let total =0;
     const {tax,products}=options;
     //options.products.forEach(product=>{
@@ -35,14 +35,14 @@ function taxCalculation(options: TaxtCalculationOptions):[number,number]{ //[num
    // return [total, total*options.tax];
    return [total, total*tax];
 }
-
+/*
 const shoppingCart =  [phone, tablet];
 const tax=0.15;
 
 const result = taxCalculation({ //desusctruturar resultado que es un arreglo
     products: shoppingCart,
     tax:tax   // tambien puede dejarse un solo tax ya que la propiedad y la variable se llaman igual.
-})
+})*/
 
 /*alternativa de desustructuracion
 const [res,tax1] = taxCalculation({ 
@@ -55,10 +55,9 @@ const [res,tax1] = taxCalculation({
 
 
 /*tarea vamos a desustrucurar result que es un arreglo*/
-const [res,tax1]=[result[0], result[1]]
+//const [res,tax1]=[result[0], result[1]]
 
 //console.log('Total', result[0]);
 //console.log('Tax', result[1]);
-console.log('Total', res);
-console.log('Tax', tax1);
-export{}
+//console.log('Total', res);
+//console.log('Tax', tax1);
